@@ -1,0 +1,65 @@
+@use '../utilities/variables';
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: variables.color();
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: variables.color();
+}
+
+
+.hidden {
+    display: none;
+}
+
+.container {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.print {
+    display: none;
+}
+
+@media (min-with: 570px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 750px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 990px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .container {
+        max-width: 1050px;
+    }
+}
+
+@media print {
+    .container {
+        max-width: none!important;
+        margin: 0!important;
+    }
+}

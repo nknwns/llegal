@@ -1,0 +1,11 @@
+@use '../utilities/variables';
+
+@forward '../components/button';
+@forward '../components/list';
+
+@forward '../sections/hero';
+@forward '../sections/matters';
+@forward '../sections/about';
+@forward '../sections/reviews';
+@forward '../sections/managers';
+@forward '../sections/contact';

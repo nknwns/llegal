@@ -1,0 +1,16 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.functions {
+    @include mixins.flex-box(25px, $v: flex-end, $h: center);
+}
+
+@media (min-width: 1200px) {
+    .functions {
+        &__item {
+            &--menu {
+                margin-left: 110px;
+            }
+        }
+    }
+}

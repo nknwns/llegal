@@ -1,0 +1,53 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+@forward '../components/skip-link';
+@forward '../components/functions';
+@forward '../components/menu';
+
+.header {
+    background-color: variables.background("header");
+    padding-top: 35px;
+    padding-bottom: 100px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-areas: 
+        "logo functions"
+        "menu menu";
+    }
+
+    &__logo {
+        grid-area: logo;
+    }
+
+    &__menu {
+        grid-area: menu;
+        
+        margin-top: 90px;
+    }
+
+    &__functions {
+        grid-area: functions;
+    }
+}
+
+@media (min-width: 750px) {
+    .header {
+        background-color: variables.background("light");
+        padding-bottom: 35px;
+
+        &__logo {
+            margin-right: auto;
+        }
+
+        &__wrapper {
+            @include mixins.flex-box(40px);
+            justify-content: flex-end;
+        }
+
+        &__menu {
+            margin-top: 0;
+        }
+    }
+}

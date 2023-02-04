@@ -1,0 +1,97 @@
+%font-Martel {
+    font-family: 'Martel';
+}
+
+%font-OpenSans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+%letter-spacing-normal {
+    letter-spacing: 0.2px;
+}
+
+%letter-spacing-small {
+    letter-spacing: 0.1px;
+}
+
+.is-h1 {
+    @extend %font-Martel;
+    font-weight: 900;
+    font-size: 3.625rem;
+    line-height: 65px;
+    @extend %letter-spacing-normal;
+}
+
+.is-h2 {
+    @extend %font-Martel;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 50px;
+    @extend %letter-spacing-normal;
+}
+
+.is-h3 {
+    @extend %font-Martel;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 32px;
+    @extend %letter-spacing-small;
+}
+
+.is-h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 30px;
+    @extend %letter-spacing-normal;
+}
+
+.is-h5 {
+    @extend %font-Martel;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    @extend %letter-spacing-small;
+}
+
+.is-h6 {
+    @extend %font-OpenSans;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 24px;
+    @extend %letter-spacing-normal;
+}
+
+@media print {
+    %line-height-normal {
+        line-height: normal!important;
+    }
+
+    .is-h1 {
+        font-size: 58pt;
+        @extend %line-height-normal;
+
+    }
+    
+    .is-h2 {
+        font-size: 40pt;
+        @extend %line-height-normal;
+    }
+    
+    .is-h3 {
+        font-size: 24pt;
+        @extend %line-height-normal;
+    }
+
+    .is-h4 {
+        @extend %line-height-normal;
+    }
+
+    .is-h5 {
+        @extend %line-height-normal;
+    }
+
+    .is-h6 {
+        @extend %line-height-normal;
+    }
+}

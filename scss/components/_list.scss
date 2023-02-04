@@ -1,0 +1,12 @@
+@use '../utilities/mixins';
+
+.list {
+    @include mixins.flex-box(30px, column, $h: center);
+}
+
+@media (min-width: 750px) {
+    .list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

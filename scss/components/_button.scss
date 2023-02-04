@@ -1,0 +1,47 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.button {
+    background-color: variables.color('secondary');
+    color: variables.color('light-text');
+    @include mixins.btn-font();
+
+    display: inline-block;
+    padding: 0.6rem 2.2rem;
+    width: max-content;
+
+    border: 1px solid variables.color('secondary');
+    cursor: pointer;
+
+    transition-property: color, background-color;
+    transition-timing-function: ease, ease;
+    transition-duration: .6s, .6s;
+
+    &:hover {
+        background-color: transparent;
+        color: variables.color('primary');
+    }
+    
+    &:focus {
+        background-color: transparent;
+        color: variables.color('primary');
+    }
+
+    &--medium {
+        padding: 1rem 2.5rem;
+    }
+
+    &--rounded {
+        border-radius: 40px;
+    }
+
+    &--outline {
+        background-color: transparent;
+        color: variables.color('secondary');
+
+        &:hover {
+            background-color: variables.color('secondary');
+            color: variables.color('light-text');
+        }
+    }
+}

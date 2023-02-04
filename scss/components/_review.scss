@@ -1,0 +1,56 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.review {
+    border: 1px solid variables.color('border');
+    border-radius: 5px;
+
+    display: inline-block;
+    padding: 2.2rem 1.875rem;
+
+    &__stars {
+        @include mixins.flex-box($h: center);
+    }
+
+    &__description {
+        margin: 20px 0;
+        color: variables.color('second-text');
+    }
+}
+
+.user {
+    @include mixins.flex-box(15px, $h: center);
+
+    &__photo {
+        height: 50px;
+        width: 50px;
+    }
+
+    &__name {
+        @include mixins.link-font();
+        color: variables.color('primary');
+    }
+}
+
+@media print {
+    .review {
+        &__description {
+            font-size: 14pt;
+        }
+    }
+    
+    .user {
+        &__photo {
+            width: 20mm;
+            height: 20mm;
+        }
+    
+        &__name {
+            font-size: 16pt;
+        }
+
+        &__skill {
+            font-size: 14pt;
+        }
+    }
+}

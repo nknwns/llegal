@@ -1,0 +1,49 @@
+@use '../base/typography';
+
+@mixin btn-font {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+}
+
+@mixin mobile-font {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+}
+
+@mixin paragraph-font {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+@mixin link-font {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+@mixin flex-box($gap-value: null, $direction: null, $v: null, $h: null) {
+    display: flex;
+    @if $gap-value != null {
+        gap: $gap-value;
+    }
+    
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+
+    @if $v != null {
+        justify-content: $v;
+    }
+
+    @if $h != null {
+        align-items: $h;
+    }
+
+}

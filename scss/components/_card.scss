@@ -1,0 +1,32 @@
+@use '../utilities/variables';
+
+.card {
+    border: 1px solid variables.color('border');
+
+    display: inline-block;
+    padding: 2.2rem 2.5rem;
+
+    transition: border-color .6s ease;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__preview {
+        width: 48px;
+        height: 48px;
+    }
+
+    &__content {
+        margin-top: 15px;
+        
+        color: variables.color('second-text');
+    }
+
+    &:hover {
+        border-color: variables.color('rev-secondary');
+    }
+
+}

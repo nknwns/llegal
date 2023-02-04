@@ -1,0 +1,65 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.section {
+    padding: 80px 0;
+
+    &__header {
+        margin-bottom: 50px;
+        text-align: center;
+
+        &--left {
+            text-align: start;
+        }
+    }
+
+    &__subtitle:not(&__subtitle--default) {
+        @include mixins.paragraph-font();
+        margin-top: 10px;
+        color: variables.color('second-text');
+    }
+
+    &__title--contrast {
+        color: variables.color('second-text-contrast')!important;
+    }
+
+    &__subtitle--contrast {
+        color: variables.color('second-text-contrast')!important;
+    }
+}
+
+@media (min-width: 990px) {
+    .section {
+        &__header {
+            width: 860px;
+            margin: 0 auto 50px auto;
+
+            &--left {
+                width: max-content;
+                margin: 0;
+                margin-bottom: 50px;
+            }
+        }
+
+        &__subtitle {
+            width: 50%;
+            margin: 10px auto 0 auto;
+
+            &--default {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media print {
+    .section {
+        padding: 0!important;
+        page-break-after: always;
+
+        &__subtitle {
+            font-size: 16pt!important;
+            line-height: normal!important;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.manager-card {
+    border: 1px solid variables.color('border');
+
+    display: inline-block;
+
+    &__photo {
+        height: 230px;
+        width: 330px;
+    }
+
+    &__description {
+        padding: 30px;
+        margin: 0 auto;
+
+        width: max-content;
+        text-align: center;
+    }
+
+
+    &__post {
+        margin: 5px 0;
+        color: variables.color('second-text');
+        text-transform: uppercase;
+    }
+
+    &__socials {
+        @include mixins.flex-box(10px, $h: center, $v: center);
+    }
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media print {
+    .manager-card {
+        &__photo {
+            height: 65mm;
+            width: 100mm;
+        }
+
+        &__name {
+            font-size: 24pt;
+        }
+        
+        &__post {
+            margin: 5mm 0;
+            font-size: 20pt;
+        }
+
+        &__description {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    
+        &__socials {
+            display: none;
+        }
+
+        &__qrcods {
+            position: relative;
+        }
+
+        &__qrcod {
+            width: calc(33% - 5mm);
+        }
+    }
+}

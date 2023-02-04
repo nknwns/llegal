@@ -1,0 +1,86 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.contact {
+    background-image: url('../img/contact-bg.jpg');
+    background-size: cover;
+
+    padding: 115px 0 100px;
+
+    &__form {
+        @include mixins.flex-box(20px, $v: space-between);
+        flex-wrap: wrap;
+    }
+}
+
+.contact-line {
+    background-color: #FAFAFA;
+    padding: 40px;
+
+    .container {
+        width: 280px;
+    }
+
+    &__description {
+        padding: 0 20px;
+    }
+
+    &__subtitle {
+        color: variables.color('second-text');
+        @include mixins.paragraph-font();
+        margin-top: 10px;
+    }
+
+    &__button {
+        margin-top: 50px;
+        border-radius: 5px;
+        width: 100%!important;
+    }
+}
+
+@media (min-width: 750px) {
+
+    .contact-line {
+        .container {
+            width: 100%;
+            @include mixins.flex-box($h: center, $v: space-between);
+        }
+
+        &__button {
+            margin-top: 0;
+            width: max-content!important;
+        }
+    }
+}
+
+@media (min-width: 990px) {
+    .contact {
+        &__form {
+            width: 60%;
+        }
+    }
+}
+
+@media print {
+    .contact {
+        display: none;
+    }
+
+    .contact-line {
+        padding: 0;
+
+        .container {
+            width: 100%;
+            @include mixins.flex-box(20mm, $h: center);
+        }
+
+        &__description {
+            padding: 0;
+        }
+
+        &__button {
+            display: none;
+        }
+
+    }
+}

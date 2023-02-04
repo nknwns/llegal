@@ -1,0 +1,26 @@
+$colors: (
+    'primary': #8f6d2d,
+    'secondary': #876e3e,
+    'rev-secondary': #295C7A,
+    'bg-gradient':  linear-gradient(270deg, #295C7A -1.04%, #0072B5 100%),
+    'bg-dark': #252B42,
+    'text': #252B42,
+    'second-text': #737373,
+    'second-text-contrast': #6d6d6d,
+    'light-text': #FFFFFF,
+    'muted': #BDBDBD,
+    'border': #E8E8E8
+);
+
+@function color($key: "text") {
+    @return map-get($colors, $key);
+}
+
+$backgrounds: (
+    'header': #F6F6F6,
+    'light': #FAFAFA
+);
+
+@function background($key: "default") {
+    @return map-get($backgrounds, $key);
+}
